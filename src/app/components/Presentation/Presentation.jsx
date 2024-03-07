@@ -39,9 +39,9 @@ export default function Presentation() {
           transition={{ ease: "linear", duration: 35, repeat: Infinity }}
           className={styles.otherTitle}
         >
-          WEB DEVELOPPER <span className={styles.titleName}>COMPOSITEUR</span>{" "}
+          WEB DEVELOPER <span className={styles.titleName}>COMPOSITEUR</span>{" "}
           DEVELOPPEUR WEB <span className={styles.titleName}>COMPOSER</span> WEB
-          DEVELOPPER
+          DEVELOPER
         </motion.h2>
       </div>
       <div className={styles.container__infosMore}>
@@ -52,7 +52,7 @@ export default function Presentation() {
           des possibles où la lueur prend vie et illumine le regard de ceux qui
           la contemplent... <br />{" "}
           <span className={styles.name}>
-            Pinto Barreto Jessy - Web Developper & MAO Composer
+            Pinto Barreto Jessy - Web Developer & MAO Composer
           </span>
         </p>
         {/* <Link href="/mentions-legales">Mentions Légales</Link> */}
