@@ -1,0 +1,130 @@
+.container {
+  width: 100%;
+  overflow: hidden;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.container__title {
+  display: flex;
+  flex-direction: row;
+  width: 200%;
+  /* animation: scroll 40s linear infinite; */
+}
+
+.titleAndMore {
+  font-family: "Aldrich-Regular";
+  text-shadow: -30px 20px 3px rgba(0, 0, 0, 0.25);
+  font-size: 3.75rem;
+  color: aliceblue;
+  text-align: center;
+  width: 100%;
+  color: #ffffff;
+  letter-spacing: 0.2rem;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 5px #fff, 0 0 10px #fff,
+    0 0 0px #fff, 0 0 0px #fff;
+}
+.titleName {
+  color: #3d324b;
+  text-shadow: 0 0 5px #3d324b, 0 0 10px #3d324b, 0 0 5px #3d324b,
+    0 0 10px #3d324b, 0 0 0px #3d324b, 0 0 0px #3d324b;
+}
+
+.container__infosMore {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 10rem;
+  position: relative;
+  color: aliceblue;
+  font-family: "Aldrich-Regular";
+}
+
+.description {
+  width: 50%;
+  text-align: justify;
+  letter-spacing: 0.2rem;
+  font-size: 0.8rem;
+  border-right: 2px solid #fff;
+  padding-right: 2rem;
+  height: 100%;
+}
+
+.skills {
+  text-align: justify;
+  letter-spacing: 0.2rem;
+  font-size: 0.8rem;
+  padding-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/*! MOBILE */
+@media screen and (max-width: 767px) {
+  .titleAndMore {
+    font-size: 1.5rem;
+    color: aliceblue;
+    text-align: center;
+    width: 100%;
+    margin: 1rem;
+    padding-top: 2rem;
+  }
+  .container__infosMore {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 2rem;
+  }
+  .description {
+    color: #fff;
+    width: 100%;
+    font-size: 0.7rem;
+    border-right: 0px solid #fff;
+    padding-right: 0rem;
+  }
+  .skills {
+    font-size: 0.7rem;
+    padding-left: 0rem;
+    align-items: center;
+  }
+}
+
+/*! TABLETTE */
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .container__infosMore {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 5rem 5rem;
+  }
+  .description {
+    width: 100%;
+    font-size: 0.9rem;
+    border-right: 0px solid #fff;
+    padding-right: 0rem;
+  }
+  .skills {
+    font-size: 0.9rem;
+    padding-left: 0rem;
+    align-items: center;
+  }
+}
+/*! TABLETTE + MAC */
+@media screen and (min-width: 768px) and (max-width: 1280px) {
+  .titleAndMore {
+    font-size: 2.5rem;
+    text-align: center;
+    width: 100%;
+  }
+}

@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Aldrich-Regular";
+  src: url("../../../public/fonts/Aldrich-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(-150%);
+  }
+  100% {
+    transform: translateX(150%);
+  }
+}
+
+.purpleBg {
+  background-color: #3d324b52;
+}
+
+.neon {
+  color: #fff;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 5px #fff, 0 0 10px #fff,
+    0 0 0px #fff, 0 0 0px #fff;
+}
+
+.gradient-bg {
+  background: linear-gradient(180deg, #131313 5%, #2b1d3d 90.9%, #401c6e 105%);
+}
+
+.gradient-bg2 {
+  background: linear-gradient(180deg, #131313 0%, #2b1d3d 52.9%, #401c6e 100%);
+}
+.gradient-bg3 {
+  background: linear-gradient(
+    180deg,
+    #401c6e 22.9%,
+    #4f2783 68.4%,
+    #724aa6 100%
+  );
+}
+
+.gradient-bg4 {
+  background: linear-gradient(180deg, #3294d7 0%, #724aa6 0.01%, #080733 100%);
+}
