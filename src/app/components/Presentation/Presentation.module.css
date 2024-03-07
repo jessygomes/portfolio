@@ -45,7 +45,7 @@
 .titleAndMore {
   font-family: "Aldrich-Regular";
   text-shadow: -30px 20px 3px rgba(0, 0, 0, 0.25);
-  font-size: 3.75rem;
+  font-size: 3rem;
   color: aliceblue;
   text-align: center;
   width: 100%;
@@ -63,7 +63,7 @@
 .otherTitle {
   font-family: "Aldrich-Regular";
   text-shadow: -30px 20px 3px rgba(0, 0, 0, 0.25);
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: aliceblue;
   width: 100%;
   text-align: center;
