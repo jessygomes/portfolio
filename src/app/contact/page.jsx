@@ -112,6 +112,8 @@ export default function Contact() {
                 className="px-[2rem] py-[0.3rem] w-[20rem] md:py-[0.5rem] bg-slate-50 bg-opacity-10 text-white rounded-md focus:outline-none focus:border-purple-500 transition-all duration-300 ease-in-out"
                 onChange={handleChange}
                 value={form.name}
+                minLength="2"
+                maxLength="30"
                 required
               />
             </div>
@@ -124,6 +126,8 @@ export default function Contact() {
                 className="px-[2rem] py-[0.3rem] w-[20rem] md:py-[0.5rem] bg-slate-50 bg-opacity-10 text-white rounded-md focus:outline-none focus:border-purple-500 transition-all duration-300 ease-in-out"
                 onChange={handleChange}
                 value={form.fonction}
+                minLength="2"
+                maxLength="20"
               />
             </div>
             <div>
@@ -135,6 +139,8 @@ export default function Contact() {
                 className="px-[2rem] py-[0.3rem] w-[20rem] md:py-[0.5rem] bg-slate-50 bg-opacity-10 text-white rounded-md focus:outline-none focus:border-purple-500 transition-all duration-300 ease-in-out"
                 onChange={handleChange}
                 value={form.objet}
+                minLength="2"
+                maxLength="20"
                 required
               />
             </div>
@@ -159,6 +165,8 @@ export default function Contact() {
                 onChange={handleChange}
                 value={form.message}
                 required
+                minLength="2"
+                maxLength="350"
               />
             </div>
             <button

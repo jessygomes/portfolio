@@ -90,7 +90,26 @@
   font-size: 0.8rem;
 }
 .name {
+  font-size: 1.5rem;
   color: #a17fcd;
+}
+.container__socials {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  padding: -1rem 0rem;
+  position: relative;
+  color: aliceblue;
+  font-family: "Aldrich-Regular";
+  letter-spacing: 0.2rem;
+  font-size: 0.8rem;
+}
+.socials__link:hover {
+  color: #fff;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 5px #fff, 0 0 10px #fff,
+    0 0 0px #fff, 0 0 0px #fff;
 }
 
 /*! MOBILE */
@@ -120,6 +139,23 @@
     color: #fff;
     width: 100%;
     font-size: 0.5rem;
+  }
+  .name {
+    font-size: 1rem;
+  }
+  .container__socials {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    padding: -1rem 0rem;
+    position: relative;
+    color: aliceblue;
+    font-family: "Aldrich-Regular";
+    letter-spacing: 0.2rem;
+    font-size: 0.8rem;
   }
 }
 

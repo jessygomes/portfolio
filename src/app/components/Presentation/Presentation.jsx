@@ -2,6 +2,9 @@
 import { motion } from "framer-motion";
 import Player1 from "../Player/Player1";
 import styles from "./Presentation.module.css";
+import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLinkedinIn, faGithub } from "@fortawesome/free-brands-svg-icons";
 
 export default function Presentation() {
   return (
@@ -55,6 +58,28 @@ export default function Presentation() {
             Pinto Barreto Jessy - Web Developer & MAO Composer
           </span>
         </p>
+        <div className={styles.container__socials}>
+          <div className={styles.container__mails}>
+            <FontAwesomeIcon icon="fa-regular fa-envelope" />
+            <p>jessy.pintobarreto@gmail.com</p>
+          </div>
+          <Link
+            href="https://www.linkedin.com/in/jessy-gomes-pinto-barreto/"
+            target="_blank"
+            rel="noreferrer"
+            className={styles.socials__link}
+          >
+            <FontAwesomeIcon icon={faLinkedinIn} size="2x" />
+          </Link>
+          <Link
+            href="https://github.com/jessygomes"
+            target="_blank"
+            rel="noreferrer"
+            className={styles.socials__link}
+          >
+            <FontAwesomeIcon icon={faGithub} size="2x" />
+          </Link>
+        </div>
         {/* <Link href="/mentions-legales">Mentions Légales</Link> */}
       </div>
     </motion.div>
