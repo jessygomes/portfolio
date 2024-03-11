@@ -90,6 +90,8 @@
   font-size: 0.8rem;
 }
 .name {
+  letter-spacing: 0.2rem;
+  font-family: "Aldrich-Regular";
   font-size: 1.5rem;
   color: #a17fcd;
 }
@@ -142,6 +144,7 @@
   }
   .name {
     font-size: 1rem;
+    text-align: center;
   }
   .container__socials {
     display: flex;
@@ -156,6 +159,19 @@
     font-family: "Aldrich-Regular";
     letter-spacing: 0.2rem;
     font-size: 0.8rem;
+  }
+  .container__mails {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  .email__tooltip {
+    display: none;
+    margin-left: 5px;
+  }
+
+  .mailHover:hover .email__tooltip {
+    display: inline-block;
   }
 }
 

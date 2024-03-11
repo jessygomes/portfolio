@@ -5,6 +5,7 @@ import styles from "./Presentation.module.css";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedinIn, faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 export default function Presentation() {
   return (
@@ -54,15 +55,19 @@ export default function Presentation() {
           univers s’exprime... <br /> Mon art réside dans l’exploration infinie
           des possibles où la lueur prend vie et illumine le regard de ceux qui
           la contemplent... <br />{" "}
-          <span className={styles.name}>
-            Pinto Barreto Jessy - Web Developer & MAO Composer
-          </span>
+        </p>
+        <p className={styles.name}>
+          Pinto Barreto Jessy - Web Developer & MAO Composer
         </p>
         <div className={styles.container__socials}>
-          <div className={styles.container__mails}>
-            <FontAwesomeIcon icon="fa-regular fa-envelope" />
-            <p>jessy.pintobarreto@gmail.com</p>
-          </div>
+          <Link
+            href="mailto:jessy.pintobarreto@gmail.com"
+            target="_blank"
+            rel="noreferrer"
+            className={styles.socials__link}
+          >
+            <FontAwesomeIcon icon={faEnvelope} size="2x" />
+          </Link>
           <Link
             href="https://www.linkedin.com/in/jessy-gomes-pinto-barreto/"
             target="_blank"

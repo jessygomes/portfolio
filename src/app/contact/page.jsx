@@ -94,6 +94,7 @@ export default function Contact() {
               CONTACT ME
             </motion.h2>
           </div>
+
           <form
             onSubmit={handleSubmit}
             className="pt-[2rem] md:pt-[4rem] flex justify-center flex-col gap-5 relative"
@@ -103,6 +104,9 @@ export default function Contact() {
                 {confirmationMessage}
               </p>
             )}
+            <p className="text-white font-aldrich text-center">
+              jessy.pintobarreto@gmail.com
+            </p>
             <div>
               <input
                 type="text"
@@ -161,7 +165,7 @@ export default function Contact() {
                 id="message"
                 name="message"
                 placeholder="MESSAGE"
-                className="px-[2rem] py-[0.5rem] w-[20rem] bg-slate-500 bg-opacity-10 rounded-md  text-white focus:outline-none focus:border-purple-500 transition-all duration-300 ease-in-out"
+                className="px-[2rem] py-[0.5rem] w-[20rem] bg-slate-500 bg-opacity-10 rounded-md  text-white focus:outline-none focus:border-purple-800 transition-all duration-300 ease-in-out "
                 onChange={handleChange}
                 value={form.message}
                 required
