@@ -13,6 +13,43 @@ export default function CardProject() {
             translateZ="50"
             className="text-xl text-center font-aldrich text-white dark:text-white"
           >
+            BLOCKPARTY FESTIVAL
+          </CardItem>
+          <CardItem
+            as="p"
+            translateZ="60"
+            className="text-white font-aldrich text-sm max-w-sm mt-2 dark:text-neutral-300"
+          >
+            Site vitrine : NextJS
+          </CardItem>
+          <CardItem translateZ="100" className="w-full mt-2">
+            <Image
+              src="/image/blockparty.png"
+              height="1000"
+              width="1000"
+              className="h-70 w-full rounded-md object-cover group-hover/card:shadow-xl"
+              alt="thumbnail"
+            />
+          </CardItem>
+          <div className="flex justify-center items-center mt-10">
+            <CardItem
+              translateZ={50}
+              as="a"
+              href="https://block-party-xi.vercel.app/"
+              target="_blank"
+              className="px-4 py-2 rounded-xl bg-white dark:bg-white dark:text-black text-black font-aldrich text-xs font-bold"
+            >
+              Coming Soon
+            </CardItem>
+          </div>
+        </CardBody>
+      </CardContainer>
+      <CardContainer className="inter-var py-0">
+        <CardBody className=" relative group/card w-[18rem] sm:w-[25rem] min-h-[20rem] p-6 rounded-md purpleBg bg-opacity-20">
+          <CardItem
+            translateZ="50"
+            className="text-xl text-center font-aldrich text-white dark:text-white"
+          >
             FLASH RECORDS
           </CardItem>
           <CardItem
