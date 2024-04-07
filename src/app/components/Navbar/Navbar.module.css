@@ -6,7 +6,6 @@
 }
 .scrolled {
   transition: all 0.3s ease;
-  background-color: #19161ebb;
   padding: 0.5rem 10rem;
   box-shadow: 0 0 10px #19161e;
 }
@@ -14,9 +13,6 @@
 .nav {
   font-family: "aldrich-regular";
   color: aliceblue;
-}
-
-.nav__menuBar {
 }
 .nav__menuList {
   display: flex;
@@ -38,20 +34,44 @@
 }
 
 @media screen and (max-width: 767px) {
-  .nav {
-  }
   .nav__menuBar {
     display: flex;
     flex-direction: column;
     row-gap: 0.3rem;
     cursor: pointer;
   }
-  .nav__menuBar div {
+  .line {
     width: 40px;
     height: 0.2rem;
     background-color: #fff;
     border-radius: 1px;
     z-index: 10;
+    box-shadow: 0 0 8px #fff, inset 0 0 8px #fff, 0 0 10px #fff,
+      inset 0 0 16px #fff, 0 0 32px #fff, inset 0 0 32px #fff;
+    transition: all 0.3s ease;
+  }
+  .l1 {
+    transform: translateY(0);
+  }
+
+  .l2 {
+    opacity: 1;
+  }
+
+  .l3 {
+    transform: translateY(0);
+  }
+
+  .activeBurger .l1 {
+    transform: translateY(10px) rotate(45deg);
+  }
+
+  .activeBurger .l2 {
+    opacity: 0;
+  }
+
+  .activeBurger .l3 {
+    transform: translateY(-10px) rotate(-45deg);
   }
   .nav__menuList {
     flex-direction: column;
@@ -65,7 +85,9 @@
     padding: 1.5rem 1rem;
     /* min-height: calc(100vh - 12vh); */
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.776);
+    /* background-color: rgba(0, 0, 0, 0.776); */
+    background-color: transparent;
+    backdrop-filter: blur(15px);
     transition: all 0.5s ease;
     opacity: 0;
     z-index: -1;

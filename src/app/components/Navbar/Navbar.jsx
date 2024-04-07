@@ -29,6 +29,13 @@ export default function Navbar() {
   const [activeLink, setActiveLink] = useState("/");
   const [scrolled, setScrolled] = useState(false);
 
+  //! BURGER TO CROSS
+  const [isActive, setIsActive] = useState(false);
+  const handleClick = () => {
+    setIsActive(!isActive);
+    setNavActive(!navActive);
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       const isScrolled = window.scrollY > 0;
@@ -56,12 +63,14 @@ export default function Navbar() {
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
       <nav className={styles.nav}>
         <div
-          className={styles.nav__menuBar}
-          onClick={() => setNavActive(!navActive)}
+          className={`${styles.nav__menuBar} ${
+            isActive ? styles.activeBurger : ""
+          }`}
+          onClick={handleClick}
         >
-          <div></div>
-          <div></div>
-          <div></div>
+          <div className={`${styles.line} ${styles.l1}`}></div>
+          <div className={`${styles.line} ${styles.l2}`}></div>
+          <div className={`${styles.line} ${styles.l3}`}></div>
         </div>
 
         <div
@@ -78,7 +87,9 @@ export default function Navbar() {
               <div
                 key={index}
                 onClick={() => {
-                  setActiveLink(item.link), setNavActive(false);
+                  setActiveLink(item.link),
+                    setIsActive(!isActive),
+                    setNavActive(false);
                 }}
               >
                 <Link

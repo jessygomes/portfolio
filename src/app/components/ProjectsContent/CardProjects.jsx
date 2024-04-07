@@ -20,7 +20,7 @@ export default function CardProject() {
             translateZ="60"
             className="text-white font-aldrich text-sm max-w-sm mt-2 dark:text-neutral-300"
           >
-            Site vitrine : NextJS
+            Site vitrine pour le festival d&apos;Orléans : NextJS
           </CardItem>
           <CardItem translateZ="100" className="w-full mt-2">
             <Image
@@ -57,7 +57,7 @@ export default function CardProject() {
             translateZ="60"
             className="text-white font-aldrich text-sm max-w-sm mt-2 dark:text-neutral-300"
           >
-            Site vitrine : HTML, CSS & JAVASCRIPT
+            Site vitrine pour une émission musicale : NextJS
           </CardItem>
           <CardItem translateZ="100" className="w-full mt-2">
             <Image
@@ -95,7 +95,8 @@ export default function CardProject() {
             translateZ="60"
             className="text-white font-aldrich text-sm max-w-sm mt-2 dark:text-neutral-300"
           >
-            Application web (3 personnes) : NodeJs, ReactJs/Redux
+            Application web de gestion et prospection (3 personnes) : NodeJs,
+            ReactJs/Redux, PostgreSQL
           </CardItem>
           <CardItem translateZ="100" className="w-full mt-2">
             <Image
@@ -126,14 +127,15 @@ export default function CardProject() {
             translateZ="50"
             className="text-xl text-center font-aldrich text-white dark:text-white"
           >
-            BELLE NIPPES
+            BELLE NIPPE
           </CardItem>
           <CardItem
             as="p"
             translateZ="60"
             className="text-white font-aldrich text-sm max-w-sm mt-2 dark:text-neutral-300"
           >
-            Site e-commerce (2 personnes) : ReactJs/Redux, Symfony
+            Site e-commerce pour un créateur de vêtements : ReactJs/Redux,
+            NodeJs, PostgreSQL
           </CardItem>
           <CardItem translateZ="100" className="w-full mt-2">
             <Image
