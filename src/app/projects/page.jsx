@@ -3,6 +3,11 @@ import Navbar from "../components/Navbar/Navbar";
 import { SparklesCore } from "../components/UI/Sparkles";
 import ProjectContent from "../components/ProjectsContent/ProjectContent";
 
+export const metadata = {
+  title: "Projects | Portfolio",
+  description: "Jessy's Projects",
+};
+
 export default function Projects() {
   return (
     <section className="flex min-h-screen flex-col items-center gradient-bg">

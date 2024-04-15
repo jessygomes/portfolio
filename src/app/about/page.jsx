@@ -4,6 +4,11 @@ import styles from "../components/Presentation/Presentation.module.css";
 import AboutContent from "../components/AboutContent/AboutContent";
 import Player1 from "../components/Player/Player1";
 
+export const metadata = {
+  title: "About | Portfolio",
+  description: "About Jessy Pinto Barreto",
+};
+
 export default function About() {
   return (
     <section
