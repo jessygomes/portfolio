@@ -4,7 +4,45 @@ import { CardBody, CardContainer, CardItem } from "../UI/3d-card";
 
 export default function CardProject() {
   return (
-    <div className=" flex flex-col flex-wrap justify-center gap-8">
+    <div className=" flex flex-wrap justify-center gap-8">
+      <CardContainer className="inter-var py-0">
+        <CardBody className=" relative group/card w-[18rem] sm:w-[25rem] min-h-[20rem] p-6 rounded-md purpleBg bg-opacity-20">
+          <CardItem
+            translateZ="50"
+            className="text-xl text-center font-aldrich text-white dark:text-white"
+          >
+            FAISEUR DE BATTEMENTS
+          </CardItem>
+          <CardItem
+            as="p"
+            translateZ="60"
+            className="text-white font-aldrich text-sm max-w-sm mt-2 dark:text-neutral-300"
+          >
+            Site présentant mes compositions musicales de manière plus immersive
+            : NextJS, Tailwind, Figma
+          </CardItem>
+          <CardItem translateZ="100" className="w-full mt-2">
+            <Image
+              src="/image/fdb.png"
+              height="1000"
+              width="1000"
+              className="h-70 w-full rounded-md object-cover group-hover/card:shadow-xl"
+              alt="thumbnail"
+            />
+          </CardItem>
+          <div className="flex justify-center items-center mt-10">
+            <CardItem
+              translateZ={50}
+              as="a"
+              href="https://www.faiseurdebattements.com/"
+              target="_blank"
+              className="px-4 py-2 rounded-xl bg-white dark:bg-white dark:text-black text-black font-aldrich text-xs font-bold"
+            >
+              Voir le site
+            </CardItem>
+          </div>
+        </CardBody>
+      </CardContainer>
       <CardContainer className="inter-var py-0">
         <CardBody className=" relative group/card w-[18rem] sm:w-[25rem] min-h-[20rem] p-6 rounded-md purpleBg bg-opacity-20">
           <CardItem
@@ -18,7 +56,8 @@ export default function CardProject() {
             translateZ="60"
             className="text-white font-aldrich text-sm max-w-sm mt-2 dark:text-neutral-300"
           >
-            Site vitrine pour le festival d&apos;Orléans : NextJS
+            Site vitrine pour le festival d&apos;Orléans qui présente toutes les
+            infos du festival : NextJS, Tailwind, Figma
           </CardItem>
           <CardItem translateZ="100" className="w-full mt-2">
             <Image
@@ -33,7 +72,45 @@ export default function CardProject() {
             <CardItem
               translateZ={50}
               as="a"
-              href="https://block-party-xi.vercel.app/"
+              href="https://www.blockpartyfestival.fr/"
+              target="_blank"
+              className="px-4 py-2 rounded-xl bg-white dark:bg-white dark:text-black text-black font-aldrich text-xs font-bold"
+            >
+              Voir le site
+            </CardItem>
+          </div>
+        </CardBody>
+      </CardContainer>
+      <CardContainer className="inter-var">
+        <CardBody className=" relative group/card w-[18rem] sm:w-[25rem] min-h-[20rem] p-6 rounded-md purpleBg bg-opacity-20">
+          <CardItem
+            translateZ="50"
+            className="text-xl text-center font-aldrich text-white dark:text-white"
+          >
+            BELLE NIPPE
+          </CardItem>
+          <CardItem
+            as="p"
+            translateZ="60"
+            className="text-white font-aldrich text-sm max-w-sm mt-2 dark:text-neutral-300"
+          >
+            Site e-commerce pour un créateur de vêtements : ReactJs/Redux,
+            NodeJs, PostgreSQL
+          </CardItem>
+          <CardItem translateZ="100" className="w-full mt-2">
+            <Image
+              src="/image/Bellenippe.png"
+              height="1000"
+              width="1000"
+              className="h-70 w-full rounded-md object-cover group-hover/card:shadow-xl"
+              alt="thumbnail"
+            />
+          </CardItem>
+          <div className="flex justify-center items-center mt-10">
+            <CardItem
+              translateZ={50}
+              as="a"
+              href="https://github.com/jessygomes/Belle-Nippe"
               target="_blank"
               className="px-4 py-2 rounded-xl bg-white dark:bg-white dark:text-black text-black font-aldrich text-xs font-bold"
             >
@@ -55,7 +132,8 @@ export default function CardProject() {
             translateZ="60"
             className="text-white font-aldrich text-sm max-w-sm mt-2 dark:text-neutral-300"
           >
-            Site vitrine + Blog : NextJS
+            Site vitrine + Blog : NextJS (server actions), Tailwind, Figma (la
+            demande du client a évolué, ce site est destiné à changer)
           </CardItem>
           <CardItem translateZ="100" className="w-full mt-2">
             <Image
@@ -155,26 +233,24 @@ export default function CardProject() {
           </div>
         </CardBody>
       </CardContainer>
-
-      <CardContainer className="inter-var">
+      <CardContainer className="inter-var py-0">
         <CardBody className=" relative group/card w-[18rem] sm:w-[25rem] min-h-[20rem] p-6 rounded-md purpleBg bg-opacity-20">
           <CardItem
             translateZ="50"
             className="text-xl text-center font-aldrich text-white dark:text-white"
           >
-            BELLE NIPPE
+            PORTFOLIO
           </CardItem>
           <CardItem
             as="p"
             translateZ="60"
             className="text-white font-aldrich text-sm max-w-sm mt-2 dark:text-neutral-300"
           >
-            Site e-commerce pour un créateur de vêtements : ReactJs/Redux,
-            NodeJs, PostgreSQL
+            Mon portfolio : NextJS, Tailwind
           </CardItem>
           <CardItem translateZ="100" className="w-full mt-2">
             <Image
-              src="/image/Bellenippe.png"
+              src="/image/portfolio.png"
               height="1000"
               width="1000"
               className="h-70 w-full rounded-md object-cover group-hover/card:shadow-xl"
@@ -185,11 +261,10 @@ export default function CardProject() {
             <CardItem
               translateZ={50}
               as="a"
-              href="https://github.com/jessygomes/Belle-Nippe"
-              target="_blank"
+              href="/"
               className="px-4 py-2 rounded-xl bg-white dark:bg-white dark:text-black text-black font-aldrich text-xs font-bold"
             >
-              Coming Soon
+              Home
             </CardItem>
           </div>
         </CardBody>
