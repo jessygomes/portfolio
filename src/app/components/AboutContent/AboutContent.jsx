@@ -42,10 +42,10 @@ export default function AboutContent() {
           </p>
         </article>
         <div className={styles.skills}>
-          <p>NodeJs & PostGreSQL</p>
-          <p>Figma & Base Photoshop</p>
-          <p>ReactJs | Redux & NextJs</p>
-          <p>FL Studio</p>
+          <p>NodeJs & PostGreSQL | MongoDb</p>
+          <p>Next.js (ReactJs) | Redux/Zustand</p>
+          <p>Figma & Base Photoshop (Design)</p>
+          <p>FL Studio (MAO)</p>
         </div>
       </div>
     </motion.div>
