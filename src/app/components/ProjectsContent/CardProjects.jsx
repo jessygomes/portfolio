@@ -5,7 +5,7 @@ import { CardBody, CardContainer, CardItem } from "../UI/3d-card";
 export default function CardProject() {
   return (
     <div className=" flex flex-wrap justify-center gap-8">
-      <CardContainer className="inter-var">
+      {/* <CardContainer className="inter-var">
         <CardBody className=" relative group/card w-[18rem] sm:w-[25rem] min-h-[20rem] p-6 rounded-md purpleBg bg-opacity-20">
           <CardItem
             translateZ="50"
@@ -42,7 +42,7 @@ export default function CardProject() {
             </CardItem>
           </div>
         </CardBody>
-      </CardContainer>
+      </CardContainer> */}
 
       <CardContainer className="inter-var py-0">
         <CardBody className=" relative group/card w-[18rem] sm:w-[25rem] min-h-[20rem] p-6 rounded-md purpleBg bg-opacity-20">
