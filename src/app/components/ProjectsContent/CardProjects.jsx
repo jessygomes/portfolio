@@ -248,7 +248,7 @@ export default function CardProject() {
             translateZ="60"
             className="text-white font-aldrich text-sm max-w-sm mt-2 dark:text-neutral-300"
           >
-            Mon portfolio : NextJS, Tailwind
+            Mon portfolio : NextJS, Tailwind & CSS
           </CardItem>
           <CardItem translateZ="100" className="w-full mt-2">
             <Image
