@@ -18,8 +18,8 @@ export default function CardProject() {
             translateZ="60"
             className="text-white font-aldrich text-sm max-w-sm mt-2 dark:text-neutral-300"
           >
-            Site e-commerce (couturier) : NextJs, Tailwind, Zustand, MongoDb (+
-            Dashboard Admin) <br /> (En cours)
+            En cours : Site e-commerce (couturier) : NextJs, Tailwind, Zustand,
+            MongoDb (+ Dashboard Admin)
           </CardItem>
           <CardItem translateZ="100" className="w-full mt-2">
             <Image
