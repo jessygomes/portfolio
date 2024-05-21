@@ -23,7 +23,7 @@ export default function CardProject() {
           </CardItem>
           <CardItem translateZ="100" className="w-full mt-2">
             <Image
-              src="/image/bellenippe.png"
+              src="/image/oui.png"
               height="1000"
               width="1000"
               className="h-70 w-full rounded-md object-cover group-hover/card:shadow-xl"
