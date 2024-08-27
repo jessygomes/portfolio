@@ -18,8 +18,8 @@ export default function CardProject() {
             translateZ="60"
             className="text-white font-aldrich text-sm max-w-sm mt-2 dark:text-neutral-300"
           >
-            Application pour la Création et Partage des événements musicaux et
-            culturels : Typescript, NextJs, Tailwind, Prisma, PostgreSQL.
+            Application pour la Création et Partage des événements culturels :
+            Typescript, NextJs, Tailwind, Prisma, PostgreSQL.
           </CardItem>
           <CardItem translateZ="100" className="w-full mt-2">
             <Image
@@ -73,7 +73,7 @@ export default function CardProject() {
             <CardItem
               translateZ={50}
               as="a"
-              href="https://bellenippe-shop.vercel.app/"
+              href="https://www.bellenippe.fr/"
               target="_blank"
               className="px-4 py-2 rounded-xl bg-white dark:bg-white dark:text-black text-black font-aldrich text-xs font-bold"
             >
