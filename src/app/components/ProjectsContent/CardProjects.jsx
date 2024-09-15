@@ -34,11 +34,11 @@ export default function CardProject() {
             <CardItem
               translateZ={50}
               as="a"
-              href="https://nocap-swart.vercel.app/"
+              href="https://www.nocapdscvr.com/"
               target="_blank"
               className="px-4 py-2 rounded-xl bg-white dark:bg-white dark:text-black text-black font-aldrich text-xs font-bold"
             >
-              Coming Soon
+              Voir le site
             </CardItem>
           </div>
         </CardBody>
