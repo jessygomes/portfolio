@@ -91,7 +91,7 @@ export default function ProjectDetails({ params }) {
                   </span>
                 ))}
               </div>
-              <div className="px-8 sm:px-0 flex flex-col gap-2 text-white tracking-wide text-left max-w-[1000px] w-full">
+              <div className="px-8 sm:px-0 flex flex-col gap-2 text-white tracking-wide text-left text-xs sm:text-sm max-w-[1000px] w-full">
                 {descriptionParagraphs}
               </div>
               <div className="flex gap-2">
