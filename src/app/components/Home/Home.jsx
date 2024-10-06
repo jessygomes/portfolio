@@ -3,7 +3,7 @@ import React from "react";
 import { SparklesCore } from "../UI/Sparkles";
 import Presentation from "../Presentation/Presentation";
 
-export function SparklesPreview() {
+export function Home() {
   return (
     <div className="h-auto relative w-full overflow-hidden rounded-md">
       <div className="w-full absolute inset-0 h-screen">

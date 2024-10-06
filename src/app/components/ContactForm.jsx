@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
-import { SparklesCore } from "../UI/Sparkles";
-import styles from "../Presentation/Presentation.module.css";
+import { SparklesCore } from "../../app/components/UI/Sparkles";
+import styles from "./Presentation/Presentation.module.css";
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
 

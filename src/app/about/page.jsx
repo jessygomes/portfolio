@@ -1,8 +1,5 @@
 import { SparklesCore } from "../components/UI/Sparkles";
-import Navbar from "../components/Navbar/Navbar";
-import styles from "../components/Presentation/Presentation.module.css";
 import AboutContent from "../components/AboutContent/AboutContent";
-import Player1 from "../components/Player/Player1";
 
 export const metadata = {
   title: "About | Portfolio",
