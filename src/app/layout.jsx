@@ -14,6 +14,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <script
+          defer
+          src="https://cloud.umami.is/script.js"
+          data-website-id="3a5b4085-9f27-4205-b624-dd061f83eec1"
+        ></script>
+      </head>
       <body className={inter.className}>
         <Analytics />
         <SpeedInsights />
