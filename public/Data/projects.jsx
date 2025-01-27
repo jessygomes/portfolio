@@ -104,6 +104,7 @@ export const projects = [
       "Prisma",
       "Tailwind",
       "Figma",
+      "zod",
     ],
     descriptionCard: "Application de gestion et de découverte d'événements",
     description:
@@ -130,6 +131,35 @@ export const projects = [
       "Pour ce projet, j'ai conçu un site vitrine/blog pour No Cap (organisateur de soirées) : c'est une plateforme dédiée à la mise en avant des soirées organisées par la marque. Le site a pour but de capturer l'essence de chaque événement à travers des galeries photos immersives et interactives. \n\nSur la page principale, les visiteurs découvrent instantanément la dernière soirée organisée, avec son carousel de photos capturant l'ambiance et les moments forts. Un système de navigation fluide permet d'accèder aux galeries des soirées précédentes. Les utilisateurs peuvent créer un compte pour interagir davantage avec le site, en aimant les photos ou en laissant des commentaires pour partager leurs impressions sur les événements \n\nEn arrière-plan, le site comprend un espace admin pour la gestion des utilisateurs, des commentaires et des galeries photos. L'administrateur peut créer une soirée, lui associer des photos et les publier sur le site. Il peut aussi gérer les commentaires, en les affichant ou non, et leur attriuer un niveau d'affichage pour en mettre certains en avant. \n\nLe design a été pensé pour être immersif et dynamique tout en restant accessible pour tous les utilisateurs. Le site est responsive pour une expérience utilisateur optimale sur tous les appareils.",
     link: "https://www.nocapdscvr.com/",
     image: ["/image/nocap1.png", "/image/nocap2.png", "/image/nocap3.png"],
+    finish: true,
+  },
+  {
+    id: 9,
+    slug: "telephonedumonde",
+    title: "Téléphone du Monde",
+    techno: [
+      "Next.js",
+      "TypeScript",
+      "PostgreSql",
+      "Prisma",
+      "Tailwind",
+      "Figma",
+      "Framer-Motion",
+      "Stripe",
+      "zod",
+    ],
+    descriptionCard:
+      "Site e-commerce spécialisé dans les téléphones du monde entier",
+    description:
+      "Ce projet est un site e-commerce dédié à la vente de téléphones provenant de divers pays, offrant un large choix de modèles pour répondre aux besoins des clients du monde entier. \n\nLe site propose une expérience utilisateur fluide et intuitive grâce à une architecture optimisée avec Next.js et Prisma. La page principale met en avant les derniers modèles ajoutés, accompagnés de filtres et d'un système de recherche pour permettre aux utilisateurs de trouver facilement le produit qui leur convient. \n\nLes utilisateurs peuvent ajouter des articles à leur panier et finaliser leur achat via une intégration Stripe sécurisée. Le site prend en charge différents modes de livraison et offre la possibilité de saisir un code promo avant le paiement. \n\nPour les utilisateurs connectés, un espace personnel permet de consulter l'historique des commandes et de suivre leur statut. Une section admin est également incluse pour gérer les produits, les commandes et les remises, avec une interface simple et efficace. \n\nLe design, conçu avec Tailwind CSS et Figma, met en avant une esthétique moderne et responsive pour s'adapter à tous les appareils.",
+    link: "https://www.telephonedumonde.com/",
+    image: [
+      "/image/phonedumonde1.png",
+      "/image/phonedumonde2.png",
+      "/image/phonedumonde3.png",
+      "/image/phonedumonde4.png",
+      "/image/phonedumonde5.png",
+    ],
     finish: true,
   },
 ];
