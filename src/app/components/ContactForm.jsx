@@ -1,12 +1,49 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { SparklesCore } from "../../app/components/UI/Sparkles";
 import styles from "./Presentation/Presentation.module.css";
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const fieldVariants = {
+  hidden: { opacity: 0, y: 30, scale: 0.95 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.5, ease: "easeOut" },
+  },
+};
+
+const buttonVariants = {
+  idle: { scale: 1 },
+  hover: {
+    scale: 1.05,
+    boxShadow: "0 10px 30px rgba(139, 69, 19, 0.3)",
+    transition: { type: "spring", stiffness: 300 },
+  },
+  tap: { scale: 0.98 },
+  sending: {
+    scale: 1.02,
+    transition: { repeat: Infinity, duration: 0.8, ease: "easeInOut" },
+  },
+};
+
 export default function Contact() {
   const [confirmationMessage, setConfirmationMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const [form, setForm] = useState({
     name: "",
@@ -22,6 +59,7 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setIsLoading(true);
 
     emailjs
       .sendForm(
@@ -41,15 +79,45 @@ export default function Contact() {
             message: "",
           });
           setConfirmationMessage("Email envoyé avec succès !");
+          setIsLoading(false);
           setTimeout(() => {
             setConfirmationMessage("");
           }, 5000);
         },
         (error) => {
           console.log(error.text);
+          setIsLoading(false);
         }
       );
   };
+
+  const formFields = [
+    {
+      name: "name",
+      placeholder: "NOM & PRENOM",
+      type: "text",
+      required: true,
+      minLength: 2,
+      maxLength: 30,
+    },
+    {
+      name: "fonction",
+      placeholder: "FONCTION",
+      type: "text",
+      required: false,
+      minLength: 2,
+      maxLength: 20,
+    },
+    {
+      name: "objet",
+      placeholder: "OBJET",
+      type: "text",
+      required: true,
+      minLength: 2,
+      maxLength: 20,
+    },
+    { name: "email", placeholder: "EMAIL", type: "email", required: true },
+  ];
 
   return (
     <section
@@ -95,91 +163,95 @@ export default function Contact() {
             </motion.h2>
           </div>
 
-          <form
+          <motion.form
             onSubmit={handleSubmit}
             className="pt-[2rem] md:pt-[4rem] flex justify-center flex-col gap-5 relative"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
           >
-            {confirmationMessage && (
-              <p className="text-white font-aldrich text-center">
-                {confirmationMessage}
-              </p>
-            )}
-            <p className="text-white font-aldrich text-center">
+            <AnimatePresence>
+              {confirmationMessage && (
+                <motion.p
+                  className="text-white font-aldrich text-center"
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <motion.span
+                    animate={{ scale: [1, 1.1, 1] }}
+                    transition={{ duration: 0.6, ease: "easeInOut" }}
+                  >
+                    ✓
+                  </motion.span>{" "}
+                  {confirmationMessage}
+                </motion.p>
+              )}
+            </AnimatePresence>
+
+            <motion.p
+              className="text-white font-aldrich text-center"
+              variants={fieldVariants}
+              whileHover={{ scale: 1.05 }}
+            >
               jessy.pintobarreto@gmail.com
-            </p>
-            <div>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="NOM & PRENOM"
-                className="px-[2rem] py-[0.3rem] w-[20rem] md:py-[0.5rem] bg-slate-50 bg-opacity-10 text-white rounded-md focus:outline-none focus:border-purple-500 transition-all duration-300 ease-in-out"
-                onChange={handleChange}
-                value={form.name}
-                minLength="2"
-                maxLength="30"
-                required
-              />
-            </div>
-            <div>
-              <input
-                type="text"
-                id="fonction"
-                name="fonction"
-                placeholder="FONCTION"
-                className="px-[2rem] py-[0.3rem] w-[20rem] md:py-[0.5rem] bg-slate-50 bg-opacity-10 text-white rounded-md focus:outline-none focus:border-purple-500 transition-all duration-300 ease-in-out"
-                onChange={handleChange}
-                value={form.fonction}
-                minLength="2"
-                maxLength="20"
-              />
-            </div>
-            <div>
-              <input
-                type="text"
-                id="objet"
-                name="objet"
-                placeholder="OBJET"
-                className="px-[2rem] py-[0.3rem] w-[20rem] md:py-[0.5rem] bg-slate-50 bg-opacity-10 text-white rounded-md focus:outline-none focus:border-purple-500 transition-all duration-300 ease-in-out"
-                onChange={handleChange}
-                value={form.objet}
-                minLength="2"
-                maxLength="20"
-                required
-              />
-            </div>
-            <div>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="EMAIL"
-                className="px-[2rem] py-[0.3rem] w-[20rem] md:py-[0.5rem] bg-slate-50 bg-opacity-10 text-white rounded-md focus:outline-none focus:border-purple-500 transition-all duration-300 ease-in-out"
-                onChange={handleChange}
-                value={form.email}
-                required
-              />
-            </div>
-            <div>
-              <textarea
+            </motion.p>
+
+            {formFields.map((field, index) => (
+              <motion.div key={field.name} variants={fieldVariants}>
+                <motion.input
+                  type={field.type}
+                  id={field.name}
+                  name={field.name}
+                  placeholder={field.placeholder}
+                  className="px-[2rem] py-[0.3rem] w-[20rem] md:py-[0.5rem] bg-slate-50 bg-opacity-10 text-white rounded-md focus:outline-none focus:border-purple-500 transition-all duration-300 ease-in-out"
+                  onChange={handleChange}
+                  value={form[field.name]}
+                  minLength={field.minLength}
+                  maxLength={field.maxLength}
+                  required={field.required}
+                  whileFocus={{
+                    scale: 1.02,
+                    boxShadow: "0 0 20px rgba(139, 69, 19, 0.3)",
+                  }}
+                  whileHover={{ scale: 1.01 }}
+                />
+              </motion.div>
+            ))}
+
+            <motion.div variants={fieldVariants}>
+              <motion.textarea
                 id="message"
                 name="message"
                 placeholder="MESSAGE"
-                className="px-[2rem] py-[0.5rem] w-[20rem] bg-slate-500 bg-opacity-10 rounded-md  text-white focus:outline-none focus:border-purple-800 transition-all duration-300 ease-in-out "
+                className="px-[2rem] py-[0.5rem] w-[20rem] bg-slate-500 bg-opacity-10 rounded-md text-white focus:outline-none focus:border-purple-800 transition-all duration-300 ease-in-out"
                 onChange={handleChange}
                 value={form.message}
                 required
                 minLength="2"
                 maxLength="350"
+                whileFocus={{
+                  scale: 1.02,
+                  boxShadow: "0 0 20px rgba(139, 69, 19, 0.3)",
+                }}
+                whileHover={{ scale: 1.01 }}
               />
-            </div>
-            <button
+            </motion.div>
+
+            <motion.button
               type="submit"
               className="p-[0.5rem] text-white neon hover:text-white font-aldrich tracking-[0.3rem] bg-gradient-to-r from-black-800 to-zinc-600 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600 transition-all duration-300 ease-in-out hover:from-purple-600 hover:to-purple-800 hover:ring-2 hover:ring-purple-600 hover:shadow-xl"
+              variants={buttonVariants}
+              initial="idle"
+              whileHover="hover"
+              whileTap="tap"
+              animate={isLoading ? "sending" : "idle"}
+              disabled={isLoading}
             >
-              ENVOYER
-            </button>
-          </form>
+              {isLoading ? "ENVOI..." : "ENVOYER"}
+            </motion.button>
+          </motion.form>
         </motion.section>
       </div>
     </section>

@@ -1,10 +1,77 @@
 "use client";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { projects } from "../../../../public/Data/projects";
 import { SparklesCore } from "../../components/UI/Sparkles";
 import { useState } from "react";
 import Link from "next/link";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
+
+const imageVariants = {
+  hidden: { opacity: 0, scale: 0.9 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.5, ease: "easeOut" },
+  },
+  exit: {
+    opacity: 0,
+    scale: 0.9,
+    transition: { duration: 0.3 },
+  },
+};
+
+const thumbnailVariants = {
+  inactive: { opacity: 0.5, scale: 1 },
+  active: { opacity: 1, scale: 1.05 },
+  hover: {
+    opacity: 0.8,
+    scale: 1.1,
+    transition: { type: "spring", stiffness: 300 },
+  },
+};
+
+const techVariants = {
+  hidden: { opacity: 0, scale: 0.8 },
+  visible: { opacity: 1, scale: 1 },
+  hover: {
+    scale: 1.1,
+    y: -5,
+    boxShadow: "0 8px 25px rgba(126, 94, 165, 0.3)",
+    transition: { type: "spring", stiffness: 400 },
+  },
+};
+
+const buttonVariants = {
+  idle: { scale: 1, y: 0 },
+  hover: {
+    scale: 1.05,
+    y: -2,
+    boxShadow: "0 10px 30px rgba(0, 0, 0, 0.2)",
+    transition: { type: "spring", stiffness: 300 },
+  },
+  tap: { scale: 0.98 },
+};
 
 export default function ProjectDetails({ params }) {
   const project = projects.find(
@@ -16,9 +83,16 @@ export default function ProjectDetails({ params }) {
   const descriptionParagraphs = project.description
     .split("\n")
     .map((p, idx) => (
-      <p key={idx} className="text-white">
+      <motion.p
+        key={idx}
+        className="text-white"
+        variants={itemVariants}
+        initial="hidden"
+        animate="visible"
+        transition={{ delay: idx * 0.1 }}
+      >
         {p}
-      </p>
+      </motion.p>
     ));
 
   return (
@@ -49,65 +123,124 @@ export default function ProjectDetails({ params }) {
             }}
             className="w-full overflow-hidden pb-20"
           >
-            <div className="flex flex-col justify-center items-center gap-8 pt-32">
-              <h1 className="text-white text-2xl font-aldrich uppercase">
+            <motion.div
+              className="flex flex-col justify-center items-center gap-8 pt-32"
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+            >
+              <motion.h1
+                className="text-white text-2xl font-aldrich uppercase"
+                variants={itemVariants}
+                whileHover={{
+                  scale: 1.05,
+                  textShadow: "0 0 20px rgba(126, 94, 165, 0.5)",
+                }}
+              >
                 {project.title}
-              </h1>
+              </motion.h1>
 
-              <div className=" flex flex-col justify-center gap-2 px-8 sm:px-0">
-                <div>
-                  <Image
-                    src={mainImage}
-                    width={1000}
-                    height={1000}
-                    alt={project.name}
-                    className="object-cover rounded-xl"
-                  />
-                </div>
+              <motion.div
+                className="flex flex-col justify-center gap-2 px-8 sm:px-0"
+                variants={itemVariants}
+              >
+                <motion.div layout className="relative">
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={mainImage}
+                      variants={imageVariants}
+                      initial="hidden"
+                      animate="visible"
+                      exit="exit"
+                    >
+                      <Image
+                        src={mainImage}
+                        width={1000}
+                        height={1000}
+                        alt={project.name}
+                        className="object-cover rounded-xl"
+                      />
+                    </motion.div>
+                  </AnimatePresence>
+                </motion.div>
 
-                <div className="w-16 h-12 md:w-40 md:h-20 flex gap-2">
+                <motion.div
+                  className="mt-2 w-16 h-12 md:w-96 flex gap-2"
+                  variants={containerVariants}
+                >
                   {project.image.map((img, idx) => (
-                    <Image
+                    <motion.div
                       key={idx}
-                      src={img}
-                      width={400}
-                      height={400}
-                      alt={`${project.name} ${idx + 1}`}
-                      className={`object-cover rounded-xl cursor-pointer opacity-50 ${
-                        mainImage === img ? "opacity-100" : ""
-                      }`}
-                      onClick={() => setMainImage(img)}
-                    />
+                      variants={thumbnailVariants}
+                      initial="inactive"
+                      animate={mainImage === img ? "active" : "inactive"}
+                      whileHover="hover"
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <Image
+                        src={img}
+                        width={400}
+                        height={400}
+                        alt={`${project.name} ${idx + 1}`}
+                        className="object-cover rounded-xl cursor-pointer"
+                        onClick={() => setMainImage(img)}
+                      />
+                    </motion.div>
                   ))}
-                </div>
-              </div>
-              <div className="px-8 sm:px-0 max-w-[1000px] flex flex-wrap justify-center w-full gap-2 sm:gap-8">
+                </motion.div>
+              </motion.div>
+
+              <motion.div
+                className="px-8 sm:px-0 max-w-[1000px] flex flex-wrap justify-center w-full gap-2 sm:gap-8"
+                variants={containerVariants}
+              >
                 {project.techno.map((tech, index) => (
-                  <span
+                  <motion.span
                     key={index}
-                    className="bg-mylightpurple w-20 sm:w-32 text-white font-aldrich text-xs sm:text-sm text-center py-1 rounded-xl"
+                    className="bg-mylightpurple w-20 sm:w-32 text-white font-aldrich text-xs sm:text-sm text-center py-1 rounded-xl cursor-pointer"
+                    variants={techVariants}
+                    initial="hidden"
+                    animate="visible"
+                    whileHover="hover"
+                    transition={{ delay: index * 0.1 }}
                   >
                     {tech}
-                  </span>
+                  </motion.span>
                 ))}
-              </div>
-              <div className="px-8 sm:px-0 flex flex-col gap-2 text-white tracking-wide text-left text-xs sm:text-sm max-w-[1000px] w-full">
+              </motion.div>
+
+              <motion.div
+                className="px-8 sm:px-0 flex flex-col gap-2 text-white tracking-wide text-left text-xs sm:text-sm max-w-[1000px] w-full"
+                variants={containerVariants}
+              >
                 {descriptionParagraphs}
-              </div>
-              <div className="flex gap-2">
+              </motion.div>
+
+              <motion.div className="flex gap-2" variants={itemVariants}>
                 <Link target="_blank" href={project.link}>
-                  <button className="w-28 py-2 rounded-xl bg-white dark:bg-white dark:text-black text-black font-aldrich text-sm font-bold z-50">
-                    {" "}
+                  <motion.button
+                    className="w-28 py-2 rounded-xl bg-white dark:bg-white dark:text-black text-black font-aldrich text-sm font-bold z-50"
+                    variants={buttonVariants}
+                    initial="idle"
+                    whileHover="hover"
+                    whileTap="tap"
+                  >
                     {project.finish ? "Voir le site" : "En cours"}
-                  </button>
+                  </motion.button>
                 </Link>
                 <Link href="/projects">
-                  <button className="w-28 py-2 rounded-xl bg-white dark:bg-white dark:text-black text-black font-aldrich text-sm font-bold z-50">
+                  <motion.button
+                    className="w-28 py-2 rounded-xl bg-white dark:bg-white dark:text-black text-black font-aldrich text-sm font-bold z-50"
+                    variants={buttonVariants}
+                    initial="idle"
+                    whileHover="hover"
+                    whileTap="tap"
+                  >
                     Retour
-                  </button>
+                  </motion.button>
                 </Link>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </motion.div>
         </section>
       </div>
