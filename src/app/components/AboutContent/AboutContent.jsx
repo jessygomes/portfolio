@@ -36,8 +36,8 @@ const skillVariants = {
 export default function AboutContent() {
   const skills = [
     "NodeJs & PostGreSQL | Nest.js | Docker",
-    "Next.js (ReactJs) | Redux/Zustand",
-    "TailwindCSS",
+    "Next.js (ReactJs) | Redux/Zustand | Jest",
+    "TailwindCSS | CSS",
     "Figma & Base Photoshop (Design)",
     "FL Studio (MAO)",
   ];
